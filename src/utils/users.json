@@ -1,0 +1,12 @@
+{
+  "user_1": {
+    "name": "PITER CHAILOVSKII",
+    "login": "epam",
+    "password": "1234"
+  },
+  "user_2": {
+    "name": "dima",
+    "login": "qwer",
+    "password": "5678"
+  }
+}
