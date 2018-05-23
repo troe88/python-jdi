@@ -10,10 +10,10 @@ setup(
     test_suite='tests.test_Classes',
     entry_points={
         'console_scripts':
-            ['test_jdi = pytest -m jdi -v --capture=no', 'helloworld = helloworld.core:print_message']
+            []
     },
     install_requires=[
-        'selenium', 'pytest-runner'
+        'selenium', 'pytest-runner', 'PyHamcrest'
     ],
     tests_require=['pytest']
 )
