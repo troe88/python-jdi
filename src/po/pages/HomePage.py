@@ -6,7 +6,6 @@ from po.sections.LoginForm import LoginForm
 
 
 class HomePage(BasePage):
-
     PROFILE_PHOTO = (By.CSS_SELECTOR, ".profile-photo")
 
     def __init__(self, driver, url) -> None:
@@ -14,8 +13,12 @@ class HomePage(BasePage):
         self._login_form = LoginForm(driver)
 
     def login(self, user: User):
+        print(f"""Login on JDI site by {user}""")
+
         self._f(*self.PROFILE_PHOTO).click()
         self._login_form.submit(user)
 
     def user_name(self):
+        print("""Get name of current User""")
+
         return self._f(*self.PROFILE_PHOTO).text

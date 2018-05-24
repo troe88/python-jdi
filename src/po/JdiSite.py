@@ -13,7 +13,11 @@ class JdiSite:
         return self._home_page
 
     def open(self):
+        print("""Open JDI site on Home page""")
+
         self.home_page().open()
 
     def get_title(self):
+        print("""Get current page title""")
+
         return self._driver.title

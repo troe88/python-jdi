@@ -6,3 +6,5 @@ dist/
 jdi_test.egg-info/
 env/
 .eggs/
+assets/
+*.html

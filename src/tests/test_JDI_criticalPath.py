@@ -1,29 +1,12 @@
 import pytest
 from hamcrest import *
-from selenium import webdriver
 
 from po.JdiSite import JdiSite
 from tests.base.BaseTestClass import BaseTestClass
-from utils.Config import Config
 from utils.ResourceLoader import ResourceLoader
 
 
-@pytest.fixture(scope="module")
-def site(my_opt):
-    config = Config()
-    driver = webdriver.Chrome(config.conf()["chrome.path"])
-    base_url = config.conf()["domains"][my_opt["domain"]]
-    driver.maximize_window()
-    yield JdiSite(driver, base_url)
-    driver.close()
-
-
-@pytest.fixture(scope="module")
-def resources():
-    return ResourceLoader()
-
-
-@pytest.mark.jdi
+@pytest.mark.jdi_criticalPath
 @pytest.mark.usefixtures("site")
 @pytest.mark.usefixtures("resources")
 class TestClass(BaseTestClass):
@@ -31,7 +14,7 @@ class TestClass(BaseTestClass):
     @pytest.mark.skip(reason="I don't want run it")
     def test_open_home_page(self, site: JdiSite, resources: ResourceLoader):
         site.open()
-        assert_that(site.get_title(), equal_to("Index Page"))
+        assert_that(site.get_title(), equal_to("Index Page1"))
 
     def test_login(self, site: JdiSite, resources: ResourceLoader):
         user = resources.get_user("user_1")
