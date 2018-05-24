@@ -1,5 +1,8 @@
 {
-  "browser":"chrome",
-  "chrome.path":"c:/Selenium/chromedriver.exe",
-  "domain":"https://jdi-framework.github.io/"
+  "browser": "chrome",
+  "chrome.path": "c:/Selenium/chromedriver.exe",
+  "domains": {
+    "qa": "https://jdi-framework.github.io/",
+    "dev": "https://dev.jdi-framework.github.io/"
+  }
 }

@@ -13,7 +13,7 @@ setup(
             []
     },
     install_requires=[
-        'selenium', 'pytest-runner', 'PyHamcrest'
+        'selenium', 'pytest-runner', 'PyHamcrest', 'utils'
     ],
     tests_require=['pytest']
 )

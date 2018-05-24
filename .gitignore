@@ -5,3 +5,4 @@ __pycache__/
 dist/
 jdi_test.egg-info/
 env/
+.eggs/

@@ -9,32 +9,32 @@ from utils.ResourceLoader import ResourceLoader
 
 
 @pytest.fixture
-def site():
+def site(my_opt):
     config = Config()
     driver = webdriver.Chrome(config.conf()["chrome.path"])
-    base_url = config.conf()["domain"]
+    base_url = config.conf()["domains"][my_opt["domain"]]
     driver.maximize_window()
     yield JdiSite(driver, base_url)
     driver.close()
 
 
 @pytest.fixture(scope="module")
-def res():
+def resources():
     return ResourceLoader()
 
 
 @pytest.mark.jdi
 @pytest.mark.usefixtures("site")
-@pytest.mark.usefixtures("res")
+@pytest.mark.usefixtures("resources")
 class TestClass(BaseTestClass):
 
     @pytest.mark.skip(reason="I don't want run it")
-    def test_open_home_page(self, site: JdiSite, res: ResourceLoader):
+    def test_open_home_page(self, site: JdiSite, resources: ResourceLoader):
         site.open()
         assert_that(site.get_title(), equal_to("Index Page"))
 
-    def test_login(self, site: JdiSite, res: ResourceLoader):
-        user = res.get_user("user_1")
+    def test_login(self, site: JdiSite, resources: ResourceLoader):
+        user = resources.get_user("user_1")
 
         site.open()
         site.home_page().login(user)
