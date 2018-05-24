@@ -8,7 +8,7 @@ def pytest_addoption(parser):
                      help="Specify browser type")
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def my_opt(request):
     return {
         "domain": request.config.getoption("--domain"),

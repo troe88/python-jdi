@@ -8,7 +8,7 @@ from utils.Config import Config
 from utils.ResourceLoader import ResourceLoader
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def site(my_opt):
     config = Config()
     driver = webdriver.Chrome(config.conf()["chrome.path"])
