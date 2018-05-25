@@ -26,5 +26,5 @@ class TestClass(BaseTestClass):
         site.open()
         site.home_page().login(user)
         actual = site.home_page().user_name()
-        with allure.step(f"Check that '{actual}' equals to {user.name()}"):
+        with allure.step(f"Check that '{actual}' equals to '{user.name()}'"):
             assert_that(actual, equal_to(user.name()))

@@ -3,7 +3,7 @@ class User:
     _password: str
     _login: str
 
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, **kwargs):
         self._name = kwargs['name']
         self._password = kwargs['password']
         self._login = kwargs['login']
