@@ -16,5 +16,4 @@ pytest -m jdi_smoke --domain=qa  --junitxml=junit/report_smk.xml
 -m jdi_smoke  --domain=qa --alluredir=allure/smoke
 
 allure generate ./smoke ./critical
-allure generate ./smoke ./critical
 allure open
