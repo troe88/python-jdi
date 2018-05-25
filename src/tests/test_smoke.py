@@ -1,3 +1,6 @@
+__author__ = "Dmitry_Lebedev1"
+__date__ = "25-May-18"
+
 import allure
 import pytest
 from hamcrest import assert_that, equal_to

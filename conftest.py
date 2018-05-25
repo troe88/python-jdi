@@ -1,3 +1,6 @@
+__author__ = "Dmitry_Lebedev1"
+__date__ = "25-May-18"
+
 import pytest
 from selenium import webdriver
 

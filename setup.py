@@ -1,3 +1,6 @@
+__author__ = "Dmitry_Lebedev1"
+__date__ = "25-May-18"
+
 from os.path import join, dirname
 
 from setuptools import setup, find_packages

@@ -1,3 +1,6 @@
+__author__ = "Dmitry_Lebedev1"
+__date__ = "25-May-18"
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
