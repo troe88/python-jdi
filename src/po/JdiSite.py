@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.remote.webdriver import WebDriver
 
 from po.pages.HomePage import HomePage
@@ -12,12 +13,10 @@ class JdiSite:
     def home_page(self):
         return self._home_page
 
+    @allure.step('Open JDI site on Home page')
     def open(self):
-        print("""Open JDI site on Home page""")
-
         self.home_page().open()
 
+    @allure.step('Get current page title')
     def get_title(self):
-        print("""Get current page title""")
-
         return self._driver.title

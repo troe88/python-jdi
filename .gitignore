@@ -8,3 +8,5 @@ env/
 .eggs/
 assets/
 *.html
+allure/
+junit/
