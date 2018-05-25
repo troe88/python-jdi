@@ -3,7 +3,7 @@ __date__ = "25-May-18"
 
 import allure
 import pytest
-from hamcrest import *
+from hamcrest import equal_to, assert_that
 
 from po.JdiSite import JdiSite
 from tests.base.BaseTestClass import BaseTestClass
@@ -31,10 +31,10 @@ class TestClassCriticalPath(BaseTestClass):
     @allure.testcase('TESTCASE-2')
     def test_user_can_login(self, site: JdiSite, resources: ResourceLoader):
         """Regular user can login in the system"""
-        expected_user = resources.get_user("user_1")
+        e_user = resources.get_user("user_1")
 
         site.open()
-        site.home_page().login(expected_user)
-        actual_user_name = site.home_page().user_name()
-        with allure.step(f"Check that '{actual_user_name}' equals to '{expected_user.name()}'"):
-            assert_that(actual_user_name, equal_to(expected_user.name()))
+        site.home_page().login(e_user)
+        a_user_name = site.home_page().user_name()
+        with allure.step(f"Check '{a_user_name}' equals to '{e_user.name()}'"):
+            assert_that(a_user_name, equal_to(e_user.name()))

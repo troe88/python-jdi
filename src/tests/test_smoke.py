@@ -19,13 +19,17 @@ from utils.ResourceLoader import ResourceLoader
 class TestSmoke(BaseTestClass):
 
     @allure.testcase('TESTCASE-456')
-    def test_failed_example(self, site: JdiSite, resources: ResourceLoader) -> None:
+    def test_failed_example(self,
+                            site: JdiSite,
+                            resources: ResourceLoader) -> None:
         """Example of failed test"""
         with allure.step("Example of failed step"):
             assert_that(True, equal_to(False))
 
     @allure.testcase('TESTCASE-432')
     @pytest.mark.skip(reason="I don't want run it")
-    def test_skipped_example(self, site: JdiSite, resources: ResourceLoader) -> None:
+    def test_skipped_example(self,
+                             site: JdiSite,
+                             resources: ResourceLoader) -> None:
         """Example of skipped test"""
         pass

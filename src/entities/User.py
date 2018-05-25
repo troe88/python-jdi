@@ -1,6 +1,7 @@
 __author__ = "Dmitry_Lebedev1"
 __date__ = "25-May-18"
 
+
 class User:
     _name: str
     _password: str
