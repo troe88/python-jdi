@@ -14,24 +14,24 @@ def pytest_addoption(parser):
 
 
 @pytest.fixture(scope="module")
-def config():
+def config() -> Config:
     return Config()
 
 
 @pytest.fixture(scope="module")
-def resources():
+def resources() -> ResourceLoader:
     return ResourceLoader()
 
 
 @pytest.fixture(scope="module")
-def site(my_opt, driver, config: Config):
+def site(my_opt, driver, config: Config) -> JdiSite:
     base_url = config.conf()["domains"][my_opt["domain"]]
     yield JdiSite(driver, base_url)
     driver.close()
 
 
 @pytest.fixture(scope="module")
-def driver(my_opt, config):
+def driver(my_opt, config) -> webdriver:
     d = webdriver.Chrome(config.conf()["chrome.path"])
     d.set_page_load_timeout(config.conf()["page.load.timeout"])
     d.set_script_timeout(config.conf()["script.timeout"])

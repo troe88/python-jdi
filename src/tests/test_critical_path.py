@@ -7,20 +7,27 @@ from tests.base.BaseTestClass import BaseTestClass
 from utils.ResourceLoader import ResourceLoader
 
 
+@allure.story('Story1')
+@allure.feature('Feature1')
 @pytest.mark.jdi_criticalPath
 @pytest.mark.usefixtures("site")
 @pytest.mark.usefixtures("resources")
-class TestClass(BaseTestClass):
+class TestClassCriticalPath(BaseTestClass):
 
     # @pytest.mark.skip(reason="I don't want run it")
+    @allure.testcase('TESTCASE-1')
     def test_open_home_page(self, site: JdiSite, resources: ResourceLoader):
+        """Home page can be opened"""
+        expected_title = "Index Page1"
+
         site.open()
         title = site.get_title()
-        expected_title = "Index Page1"
         with allure.step(f"Check that '{title}' equals to '{expected_title}'"):
             assert_that(title, equal_to(expected_title))
 
-    def test_login(self, site: JdiSite, resources: ResourceLoader):
+    @allure.testcase('TESTCASE-2')
+    def test_user_can_login(self, site: JdiSite, resources: ResourceLoader):
+        """Regular user can login in the system"""
         user = resources.get_user("user_1")
 
         site.open()
