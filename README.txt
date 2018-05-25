@@ -13,7 +13,11 @@ pytest -m jdi_smoke --domain=qa  --junitxml=junit/report_smoke.xml
 
 ===ALLURE==
 -m jdi_criticalPath --domain=qa --alluredir=allure/critical
--m jdi_smoke  --domain=qa --alluredir=allure/smoke
+-m jdi_smoke --domain=qa --alluredir=allure/smoke
 
-allure generate ./smoke ./critical --clean
+allure generate ./allure/smoke ./allure/critical --clean
 allure open
+
+=OR=
+-m jdi --alluredir=allure/all
+allure generate ./allure/all --clean

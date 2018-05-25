@@ -9,16 +9,16 @@ from utils.ResourceLoader import ResourceLoader
 
 @allure.story('Story1')
 @allure.feature('Feature1')
+@pytest.mark.jdi
 @pytest.mark.jdi_criticalPath
 @pytest.mark.usefixtures("site")
 @pytest.mark.usefixtures("resources")
 class TestClassCriticalPath(BaseTestClass):
 
-    # @pytest.mark.skip(reason="I don't want run it")
     @allure.testcase('TESTCASE-1')
     def test_open_home_page(self, site: JdiSite, resources: ResourceLoader):
         """Home page can be opened"""
-        expected_title = "Index Page1"
+        expected_title = "Index Page"
 
         site.open()
         title = site.get_title()
