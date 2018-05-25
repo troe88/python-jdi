@@ -15,7 +15,7 @@ class LoginForm(BaseSection):
     def __init__(self, driver) -> None:
         super().__init__(driver)
 
-    def submit(self, user):
+    def submit(self, user) -> None:
         self._f(*self.LOGIN).send_keys(user.login())
         self._f(*self.PASSWORD).send_keys(user.password())
         self._f(*self.ENTER).click()

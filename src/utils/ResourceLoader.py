@@ -12,5 +12,5 @@ class ResourceLoader:
         with open('data/users.json') as json_file:
             self._users = json.loads(json_file.read())
 
-    def get_user(self, user_id: str):
+    def get_user(self, user_id: str) -> User:
         return User(**self._users[user_id])

@@ -21,5 +21,5 @@ class User:
     def name(self):
         return self._name
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"{self.name()}"

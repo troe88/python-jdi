@@ -18,8 +18,8 @@ class BasePage(object):
     def open(self):
         self._driver.get(self._url)
 
-    def get_title(self):
+    def get_title(self) -> str:
         return self._driver.title
 
-    def get_url(self):
+    def get_url(self) -> str:
         return self._driver.current_url

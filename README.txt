@@ -19,5 +19,5 @@ allure generate ./allure/smoke ./allure/critical --clean
 allure open
 
 =OR=
--m jdi --alluredir=allure/all
+-m jdi --alluredir=allure/all -n 2 --dist=loadscope
 allure generate ./allure/all --clean

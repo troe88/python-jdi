@@ -1,3 +1,5 @@
+import time
+
 __author__ = "Dmitry_Lebedev1"
 __date__ = "25-May-18"
 
@@ -23,6 +25,8 @@ class TestSmoke(BaseTestClass):
                             site: JdiSite,
                             resources: ResourceLoader) -> None:
         """Example of failed test"""
+        time.sleep(2)
+
         with allure.step("Example of failed step"):
             assert_that(True, equal_to(False))
 

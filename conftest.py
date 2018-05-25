@@ -44,7 +44,7 @@ def driver(my_opt, config) -> webdriver:
 
 
 @pytest.fixture(scope="module")
-def my_opt(request):
+def my_opt(request) -> dict:
     return {
         "domain": request.config.getoption("--domain"),
         "browser": request.config.getoption("--browser")
