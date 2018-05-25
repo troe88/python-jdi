@@ -11,6 +11,7 @@ from po.sections.LoginForm import LoginForm
 
 class HomePage(BasePage):
     PROFILE_PHOTO = (By.CSS_SELECTOR, ".profile-photo")
+    TITLE = "Index Page"
 
     def __init__(self, driver, url) -> None:
         super().__init__(driver, url)

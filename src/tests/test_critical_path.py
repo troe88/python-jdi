@@ -21,7 +21,7 @@ class TestClassCriticalPath(BaseTestClass):
     @allure.testcase('TESTCASE-1')
     def test_open_home_page(self, site: JdiSite, resources: ResourceLoader):
         """Home page can be opened"""
-        expected_title = "Index Page"
+        expected_title = site.home_page().TITLE
 
         site.open()
         title = site.get_title()
